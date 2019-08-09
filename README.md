@@ -2,17 +2,20 @@
 
 ## Usage
 
+Create an `.lein-env` file at the root.
+```clj
+{:db-type "postgres"
+ :db-name "postgres"
+ :db-user "postgres"
+ :db-host "localhost"
+ :db-password "postgres"}
+```
+
 ```
 $ lein run
 ```
 
 ### Deploy in Docker
-
-`src/service/db.clj`
-```clj
-{; :host "localhost"
-   :host "db"}
-```
 
 ```
 $ docker-compose build && docker-compose up
