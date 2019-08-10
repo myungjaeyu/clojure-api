@@ -15,8 +15,17 @@ Create an `.lein-env` file at the root.
 $ lein run
 ```
 
+Request URL - `http://localhost:3000`
+
 ### Deploy in Docker
 
+`.lein-env`
+
+```clj
+{:db-host "db"}
+ ```
 ```
 $ docker-compose build && docker-compose up
 ```
+
+Request URL - `http://localhost:80`
