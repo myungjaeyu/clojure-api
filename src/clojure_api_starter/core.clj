@@ -3,7 +3,7 @@
   (:require [compojure.handler :refer [api]]
             [ring.middleware.json :refer [wrap-json-params wrap-json-response]]
             [ring.middleware.cors :refer [wrap-cors]]
-            [clojure-api-starter.routes :refer [routes]]
+            [clojure-api-starter.routes.core :refer [routes]]
             [ring.middleware.reload :refer [wrap-reload]]
             [clojure-api-starter.service.db :refer [db-conn db-root-namespace]])
   (:gen-class))
