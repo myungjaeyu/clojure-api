@@ -8,8 +8,7 @@
     (GET "/" []
       (response (gets-user)))
     (POST "/" [name]
-      (response (create-user name))
-      (response {:name name}))
+      (response (create-user name)))
     (context "/:id" [id]
       (GET "/" []
         (response (get-user id))))))
