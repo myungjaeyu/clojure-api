@@ -6,7 +6,8 @@
                  [ring "1.7.1"]
                  [ring/ring-json "0.5.0"]
                  [ring-cors "0.1.13"]
-                 [toucan "1.12.0"]
+                 [org.clojure/java.jdbc "0.7.10"]
+                 [yesql "0.5.3"]
                  [mysql/mysql-connector-java "5.1.6"]
                  [environ "1.1.0"]]
   :profiles {:dev {:dependencies [[javax.servlet/servlet-api "2.5"]]}})

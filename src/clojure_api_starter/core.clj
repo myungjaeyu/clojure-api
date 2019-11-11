@@ -4,8 +4,7 @@
             [ring.middleware.json :refer [wrap-json-params wrap-json-response]]
             [ring.middleware.cors :refer [wrap-cors]]
             [clojure-api-starter.routes.core :refer [routes]]
-            [ring.middleware.reload :refer [wrap-reload]]
-            [clojure-api-starter.service.db :refer [db-conn db-root-namespace]])
+            [ring.middleware.reload :refer [wrap-reload]])
   (:gen-class))
 
 (def app
@@ -16,7 +15,5 @@
                  :access-control-allow-methods [:get :put :post :delete])))
 
 (defn -main []
-  (db-conn)
-  (db-root-namespace)
   (run-server (wrap-reload #'app) {:port 3000})
   (println "clojure-api-starter"))

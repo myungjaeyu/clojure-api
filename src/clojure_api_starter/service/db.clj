@@ -1,15 +1,10 @@
 (ns clojure-api-starter.service.db
-  (:require [toucan.db :as db]
-            [toucan.models :as models]
+  (:require [yesql.core :refer [defqueries]]
             [environ.core :refer [env]]))
 
-(defn db-conn []
-  (db/set-default-quoting-style! :mysql)
-  (db/set-default-db-connection! {:dbtype (env :db-type)
-                                  :dbname (env :db-name)
-                                  :user (env :db-user)
-                                  :host (env :db-host)
-                                  :password (env :db-password)}))
+(def db-spec {:subprotocol (env :db-type)
+              :subname (str "//" (env :db-host) ":3306/" (env :db-name))
+              :user (env :db-user)
+              :password (env :db-password)})
 
-(defn db-root-namespace []
-  (models/set-root-namespace! 'clojure-api-starter.models))
+(defqueries "clojure_api_starter/queries/core.sql" {:connection db-spec})

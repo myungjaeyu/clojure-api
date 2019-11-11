@@ -1,12 +1,11 @@
 (ns clojure-api-starter.service.user
-  (:require [toucan.db :as db]
-            [clojure-api-starter.models.user :refer [User]]))
+  (:require [clojure-api-starter.service.db :as db]))
 
 (defn gets-user []
-  (db/select User))
+  (db/get-users))
 
 (defn get-user [id]
-  (db/select-one User :id (Integer/parseInt id)))
+  (db/get-user {:id id}))
 
 (defn create-user [name]
-  (db/insert! User {:name name}))
+  (db/create-user<! {:name name}))
