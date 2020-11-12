@@ -3,6 +3,7 @@
   (:require [compojure.handler :refer [api]]
             [ring.middleware.json :refer [wrap-json-params wrap-json-response]]
             [ring.middleware.cors :refer [wrap-cors]]
+            [ring.swagger.swagger-ui :as swagger]
             [clojure-api-starter.routes.core :refer [routes]]
             [clojure-api-starter.service.db :refer [db-conn db-root-namespace]]
             [ring.middleware.reload :refer [wrap-reload]])
@@ -10,6 +11,7 @@
 
 (def app
   (-> (api routes)
+      (swagger/wrap-swagger-ui {:path "/docs"})
       wrap-json-params
       wrap-json-response
       (wrap-cors :access-control-allow-origin [#".*"]

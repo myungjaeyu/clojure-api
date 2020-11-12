@@ -8,5 +8,7 @@
                  [ring-cors "0.1.13"]
                  [toucan "1.15.1"]
                  [mysql/mysql-connector-java "5.1.6"]
-                 [environ "1.1.0"]]
+                 [environ "1.1.0"]
+                 [metosin/ring-swagger "0.26.2"]
+                 [metosin/ring-swagger-ui "3.36.0"]]
   :profiles {:dev {:dependencies [[javax.servlet/servlet-api "2.5"]]}})
