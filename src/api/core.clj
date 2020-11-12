@@ -1,11 +1,11 @@
-(ns clojure-api-starter.core
+(ns api.core
   (:use org.httpkit.server)
   (:require [compojure.handler :refer [api]]
             [ring.middleware.json :refer [wrap-json-params wrap-json-response]]
             [ring.middleware.cors :refer [wrap-cors]]
             [ring.swagger.swagger-ui :as swagger]
-            [clojure-api-starter.routes.core :refer [routes]]
-            [clojure-api-starter.service.db :refer [db-conn db-root-namespace]]
+            [api.routes.core :refer [routes]]
+            [api.service.db :refer [db-conn db-root-namespace]]
             [ring.middleware.reload :refer [wrap-reload]])
   (:gen-class))
 
@@ -21,4 +21,4 @@
   (db-conn)
   (db-root-namespace)
   (run-server (wrap-reload #'app) {:port 3000})
-  (println "clojure-api-starter"))
+  (println "api"))

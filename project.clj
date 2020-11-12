@@ -1,5 +1,5 @@
-(defproject clojure-api-starter "0.1.0-SNAPSHOT"
-  :main clojure-api-starter.core
+(defproject api "0.1.0-SNAPSHOT"
+  :main api.core
   :dependencies [[org.clojure/clojure "1.10.0"]
                  [http-kit "2.3.0"]
                  [compojure "1.6.1"]

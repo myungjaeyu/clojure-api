@@ -1,13 +1,14 @@
-# clojure-api-starter
+# clojure-api
 
 ## Usage
 
 Create an `.lein-env` file at the root.
+
 ```clj
 {:db-type "mysql"
  :db-name ""
- :db-user ""
- :db-host ""
+ :db-user "root"
+ :db-host "127.0.0.1"
  :db-password ""}
 ```
 
@@ -23,72 +24,16 @@ Request URL - `http://localhost:3000`
 
 ```clj
 {:db-host "db"}
- ```
+```
+
 ```
 $ docker-compose build && docker-compose up
 ```
 
 Request URL - `http://localhost:80`
 
-## API Specification
+## API Docs
 
-#### /
-
-- **Method** : GET
-- **URL** : https://:your_server_url/
-- **Response**
-
-```json
-{
-    "message":"index"
-}
-```
-
-
-#### /users
-
-- **Method** : GET
-- **URL** : https://:your_server_url/users
-- **Response**
-
-```json
-[
-    {
-        "id":1,
-        "name":"myungjaeyu"
-    }
-]
-```
-
-#### /users/:id
-
-- **Method** : GET
-- **URL** : https://:your_server_url/users
-- **Response**
-
-```json
-{
-    "id":1,
-    "name":"myungjaeyu"
-}
-```
-
-
-#### /users
-
-- **Method** : POST
-- **URL** : https://:your_server_url/users
-- **Parameters**
-
-| Field | Type |
-| ---- | ----------- |
-| name | String |
-
-- **Response**
-
-```json
-{
-    "id": 1,
-    "name": "myungjaeyu"
-}
+```bash
+http://localhost:3000/docs #swagger-ui
 ```

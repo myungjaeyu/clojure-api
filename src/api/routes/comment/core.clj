@@ -1,7 +1,7 @@
-(ns clojure-api-starter.routes.internal.comment
+(ns api.routes.comment.core
   (:require [compojure.core :refer [GET POST PUT DELETE ANY context]]
             [ring.util.response :refer [response]]
-            [clojure-api-starter.service.comment :refer [get-comments get-comment create-comment delete-comment]]))
+            [api.service.comment.core :refer [get-comments get-comment create-comment delete-comment]]))
 
 (defn comment-routes []
   (context "/comments" []

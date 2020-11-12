@@ -1,7 +1,7 @@
-(ns clojure-api-starter.service.board
+(ns api.service.board.core
   (:require [toucan.db :as db]
             [toucan.hydrate :refer [hydrate] :as hydrate]
-            [clojure-api-starter.models.core :refer [Board Comment]]))
+            [api.models.core :refer [Board Comment]]))
 
 (defn- with-comments
   {:batched-hydrate :comments}

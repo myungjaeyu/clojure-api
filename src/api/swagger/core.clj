@@ -1,4 +1,4 @@
-(ns clojure-api-starter.swagger.core
+(ns api.swagger.core
   (:require [ring.swagger.swagger2 :as rs]
             [schema.core :as s]))
 

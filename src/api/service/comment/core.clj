@@ -1,7 +1,7 @@
-(ns clojure-api-starter.service.comment
+(ns api.service.comment.core
   (:require [toucan.db :as db]
             [toucan.hydrate :refer [hydrate] :as hydrate]
-            [clojure-api-starter.models.core :refer [Comment]]))
+            [api.models.core :refer [Comment]]))
 
 (defn get-comments []
   (hydrate (db/select Comment)

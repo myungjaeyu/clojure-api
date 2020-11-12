@@ -1,11 +1,11 @@
-(ns clojure-api-starter.routes.core
+(ns api.routes.core
   (:require [compojure.core :refer [defroutes GET]]
             [compojure.route :refer [not-found]]
             [ring.util.response :refer [response]]
-            [clojure-api-starter.swagger.core :refer [swagger-json]]
-            [clojure-api-starter.routes.internal.user :refer [user-routes]]
-            [clojure-api-starter.routes.internal.board :refer [board-routes]]
-            [clojure-api-starter.routes.internal.comment :refer [comment-routes]]))
+            [api.swagger.core :refer [swagger-json]]
+            [api.routes.user.core :refer [user-routes]]
+            [api.routes.board.core :refer [board-routes]]
+            [api.routes.comment.core :refer [comment-routes]]))
 
 (defroutes routes
   (GET "/" []

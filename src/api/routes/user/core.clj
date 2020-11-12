@@ -1,7 +1,7 @@
-(ns clojure-api-starter.routes.internal.user
+(ns api.routes.user.core
   (:require [compojure.core :refer [GET POST PUT DELETE ANY context]]
             [ring.util.response :refer [response]]
-            [clojure-api-starter.service.user :refer [get-users get-user create-user delete-user]]))
+            [api.service.user.core :refer [get-users get-user create-user delete-user]]))
 
 (defn user-routes []
   (context "/users" []

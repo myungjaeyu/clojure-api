@@ -1,7 +1,7 @@
-(ns clojure-api-starter.routes.internal.board
+(ns api.routes.board.core
   (:require [compojure.core :refer [GET POST PUT DELETE ANY context]]
             [ring.util.response :refer [response]]
-            [clojure-api-starter.service.board :refer [get-boards get-board create-board delete-board]]))
+            [api.service.board.core :refer [get-boards get-board create-board delete-board]]))
 
 (defn board-routes []
   (context "/boards" []

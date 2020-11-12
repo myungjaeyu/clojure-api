@@ -1,4 +1,4 @@
-(ns clojure-api-starter.models.core
+(ns api.models.core
   (:require [toucan.models :refer [defmodel IModel hydration-keys]]))
 
 (defmodel User :users IModel (hydration-keys [_] [:user]))
