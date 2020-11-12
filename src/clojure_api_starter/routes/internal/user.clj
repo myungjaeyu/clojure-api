@@ -1,12 +1,12 @@
 (ns clojure-api-starter.routes.internal.user
   (:require [compojure.core :refer [GET POST PUT DELETE ANY context]]
             [ring.util.response :refer [response]]
-            [clojure-api-starter.service.user :refer [gets-user get-user create-user delete-user]]))
+            [clojure-api-starter.service.user :refer [get-users get-user create-user delete-user]]))
 
 (defn user-routes []
   (context "/users" []
     (GET "/" []
-      (response (gets-user)))
+      (response (get-users)))
     (POST "/" [name]
       (response (create-user name)))
     (context "/:id" [id]
