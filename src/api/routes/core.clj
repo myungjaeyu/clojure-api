@@ -3,6 +3,7 @@
             [compojure.route :refer [not-found]]
             [ring.util.response :refer [response]]
             [api.swagger.core :refer [swagger-json]]
+            [api.routes.auth.core :refer [auth-routes]]
             [api.routes.user.core :refer [user-routes]]
             [api.routes.board.core :refer [board-routes]]
             [api.routes.comment.core :refer [comment-routes]]))
@@ -12,6 +13,7 @@
     (response {:message "index"}))
   (GET "/swagger.json" []
     (response swagger-json))
+  (auth-routes)
   (user-routes)
   (board-routes)
   (comment-routes)
