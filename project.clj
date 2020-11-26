@@ -13,5 +13,6 @@
                  [buddy/buddy-hashers "1.6.0"]
                  [environ "1.1.0"]
                  [metosin/ring-swagger "0.26.2"]
-                 [metosin/ring-swagger-ui "3.36.0"]]
+                 [metosin/ring-swagger-ui "3.36.0"]
+                 [ovotech/clj-gcp "0.6.13"]]
   :profiles {:dev {:dependencies [[javax.servlet/servlet-api "2.5"]]}})
