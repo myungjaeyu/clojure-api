@@ -12,7 +12,7 @@ Create an `.lein-env` file at the root.
  :db-password ""}
 ```
 
-```
+```bash
 $ lein run
 ```
 
